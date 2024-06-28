@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithms", "Algorithms", "{271F1149-A8FF-4664-B0E8-2540F6D11BDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructure", "DataStructure", "{1D185359-F908-4281-9DC6-09817F13DE19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BinaryTree", "DataStructure.BinaryTree\DataStructure.BinaryTree.csproj", "{ABEA245C-5793-4962-9941-6FF9717F3BCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BinaryTree.Tests", "DataStructure.BinaryTree.Tests\DataStructure.BinaryTree.Tests.csproj", "{7D3C41BB-01FD-4596-A723-648EBBBB250E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABEA245C-5793-4962-9941-6FF9717F3BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEA245C-5793-4962-9941-6FF9717F3BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEA245C-5793-4962-9941-6FF9717F3BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEA245C-5793-4962-9941-6FF9717F3BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3C41BB-01FD-4596-A723-648EBBBB250E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3C41BB-01FD-4596-A723-648EBBBB250E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3C41BB-01FD-4596-A723-648EBBBB250E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3C41BB-01FD-4596-A723-648EBBBB250E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ABEA245C-5793-4962-9941-6FF9717F3BCA} = {1D185359-F908-4281-9DC6-09817F13DE19}
+		{7D3C41BB-01FD-4596-A723-648EBBBB250E} = {1D185359-F908-4281-9DC6-09817F13DE19}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AC07EE5-9507-499D-A6B2-AB5DFFDAD5D8}
+	EndGlobalSection
+EndGlobal
