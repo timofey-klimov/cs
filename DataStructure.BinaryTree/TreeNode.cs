@@ -1,21 +1,17 @@
 ﻿namespace DataStructure.BinaryTree
 {
-    public interface ITreeNode<T>
-    {
-        public T Value { get; }
-        IEnumerable<ITreeNode<T>> GetChildnres();
-    }
-
-    public class TreeNode<T> : ITreeNode<T>
+    public class TreeNode<T>
         where T : IComparable<T>
     {
-        public TreeNode<T> Left { get; private set; }
+        private TreeNode<T> _left;
+        private TreeNode<T> _right;
+        public TreeNode<T> Left => _left;
 
-        public TreeNode<T> Right { get; private set; }
+        public TreeNode<T> Right => _right;
 
         public T Value { get; private set; }
 
-        public IEnumerable<ITreeNode<T>> GetChildnres()
+        public IEnumerable<TreeNode<T>> GetChildrens()
         {
             yield return Left;
             yield return Right;
@@ -36,7 +32,7 @@
             if (value.CompareTo(node.Value) < 0)
             {
                 if (node.Left == null)
-                    node.Left = new TreeNode<T>(value);
+                    node._left = new TreeNode<T>(value);
                 else
                     Insert(node.Left, value);
             }
@@ -44,7 +40,7 @@
             if (value.CompareTo(node.Value) > 0)
             {
                 if (node.Right == null)
-                    node.Right = new TreeNode<T>(value);
+                    node._right = new TreeNode<T>(value);
                 else
                     Insert(node.Right, value);
             }

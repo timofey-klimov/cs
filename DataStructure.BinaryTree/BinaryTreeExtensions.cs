@@ -11,23 +11,20 @@ namespace DataStructure.BinaryTree
         public static IEnumerable<T> InWidth<T>(this BinaryTree<T> tree)
             where T : IComparable<T>
         {
-            var nodes = tree.GetChildnres();
-
-            var queue = new Queue<ITreeNode<T>>();
-            foreach ( var node in nodes ) { queue.Enqueue(node); }
+            var queue = new Queue<TreeNode<T>>();
+             queue.Enqueue(tree.Root);
 
             while (queue.Count > 0)
             {
                 var node = queue.Dequeue();
                 yield return node.Value;
 
-                foreach(var childNote in node.GetChildnres())
+                foreach(var childNote in node.GetChildrens())
                 {
                     if (childNote != null)
                         queue.Enqueue(childNote);
                 }
             }
-
         }
     }
 }

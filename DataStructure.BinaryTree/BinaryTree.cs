@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataStructure.BinaryTree
 {
-    public class BinaryTree<T> : ITreeNode<T>
+    public class BinaryTree<T>
         where T :IComparable<T>
 
     {
-        private TreeNode<T> Root { get; set; }
-
-        public T Value => throw new NotImplementedException();
+        public TreeNode<T> Root { get; private set; }
 
         public BinaryTree()
         {
@@ -55,9 +53,30 @@ namespace DataStructure.BinaryTree
             throw new InvalidOperationException();
         }
 
-        public IEnumerable<ITreeNode<T>> GetChildnres()
+        public IEnumerable<T> SortTree()
         {
-            yield return Root;
+            return SortNode(Root);
+        }
+
+        private IEnumerable<T> SortNode(TreeNode<T> node)
+        {
+            if (node.Left is not null)
+            {
+                var sortNodes = SortNode(node.Left);
+
+                foreach (var leftNode in sortNodes)
+                    yield return leftNode;
+            }
+
+            yield return node.Value;
+
+            if (node.Right is not null)
+            {
+                var sortedNodes = SortNode(node.Right);
+                foreach (var rightNode in sortedNodes)
+                    yield return rightNode;
+            }
+
         }
     }
 }

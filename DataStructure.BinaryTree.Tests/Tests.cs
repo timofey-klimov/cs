@@ -10,21 +10,20 @@ namespace DataStructure.BinaryTree.Tests
             var binaryTree = new BinaryTree<int>();
             list.ForEach(binaryTree.Insert);
 
-            var resultNodes = new List<ITreeNode<int>>();
+            var resultNodes = new List<TreeNode<int>>();
 
-            void getChildrenNode(ITreeNode<int> parentNode)
+            void getChildrenNode(TreeNode<int> parentNode)
             {
                 if (parentNode is null)
                     return;
-                var childNodes = parentNode.GetChildnres().ToList();
-                resultNodes.AddRange(childNodes.Where(x => x != null));
+                resultNodes.Add(parentNode);
+                var childNodes = parentNode.GetChildrens().ToList();
                 childNodes.ForEach(node => getChildrenNode(node));
             }
 
-            var startNodes = binaryTree.GetChildnres();
-            resultNodes.AddRange(startNodes);
+            resultNodes.Add(binaryTree.Root);
 
-            foreach (var childNode in startNodes)
+            foreach (var childNode in binaryTree.Root.GetChildrens())
             {
                 getChildrenNode(childNode);
             }
@@ -63,6 +62,20 @@ namespace DataStructure.BinaryTree.Tests
             list.ForEach(binaryTree.Insert);
 
             var result = binaryTree.InWidth().ToArray();
+
+            Assert.That(result, Is.EqualTo(list.Distinct()));
+        }
+
+        [Test]
+        public void BinaryTree_ShouldReturnSortElements()
+        {
+            var list = new List<int>() { -5, -6, 0, 2, 2, 3, 5 };
+            var binaryTree = new BinaryTree<int>();
+            list.ForEach(binaryTree.Insert);
+
+            var result = binaryTree.SortTree().ToArray();
+
+            list.Sort();
 
             Assert.That(result, Is.EqualTo(list.Distinct()));
         }
