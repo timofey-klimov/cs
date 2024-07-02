@@ -22,6 +22,12 @@ namespace DataStructure.BinaryTree
             Root = new TreeNode<T>(value);
         }
 
+        public BinaryTree(IEnumerable<T> values)
+        {
+            foreach (var value in values)
+                Insert(value);
+        }
+
         public void Insert(T value)
         {
             if (Root is null)
