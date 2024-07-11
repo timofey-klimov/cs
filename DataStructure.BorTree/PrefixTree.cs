@@ -6,9 +6,9 @@ namespace DataStructure.BorTree
     public class PrefixTree
     {
 
-        public PrefixTree() 
+        public PrefixTree(string value, object? info = null) 
         {
-
+            Insert(value, info);
         }
 
         public HashSet<TreeNode> Children { get; init; } = new HashSet<TreeNode>();
