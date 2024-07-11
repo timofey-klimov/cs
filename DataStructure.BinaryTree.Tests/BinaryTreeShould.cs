@@ -1,6 +1,6 @@
 namespace DataStructure.BinaryTree.Tests
 {
-    public class Tests
+    public class BinaryTreeShould
     {
 
         [Test]
