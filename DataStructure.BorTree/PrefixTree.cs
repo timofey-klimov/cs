@@ -35,7 +35,7 @@ namespace DataStructure.BorTree
             }
         }
         [DebuggerDisplay("Value={StackKey.Value}, Prefix={Prefix}")]
-        private record StackItem(TreeNode StackKey, string? Prefix);
+        private record StackItem(TreeNode TreeNode, string? Prefix);
 
         public IEnumerable<(string, object?)> RetrieveKeys(string prefix)
         {
@@ -64,13 +64,13 @@ namespace DataStructure.BorTree
                     if (!string.IsNullOrEmpty(item.Prefix))
                         stb = new StringBuilder(item.Prefix);
 
-                    stb.Append(item.StackKey.Value);
-                    if (item.StackKey.IsKey)
-                        yield return (stb.ToString(), item.StackKey.Info);
+                    stb.Append(item.TreeNode.Value);
+                    if (item.TreeNode.IsKey)
+                        yield return (stb.ToString(), item.TreeNode.Info);
 
-                    foreach (var child in item.StackKey.Children)
+                    foreach (var child in item.TreeNode.Children)
                     {
-                        stack.Push(new StackItem(child, item.StackKey.Children.Count > 1 ? stb.ToString() : null));
+                        stack.Push(new StackItem(child, item.TreeNode.Children.Count > 1 ? stb.ToString() : null));
                     }
                 }
             }
