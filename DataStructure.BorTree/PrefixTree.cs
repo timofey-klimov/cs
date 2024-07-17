@@ -11,6 +11,10 @@ namespace DataStructure.BorTree
             Insert(value, info);
         }
 
+        public PrefixTree()
+        {
+            
+        }
         public HashSet<TreeNode> Children { get; init; } = new HashSet<TreeNode>();
 
 
@@ -62,7 +66,7 @@ namespace DataStructure.BorTree
                 {
                     var item = stack.Pop();
                     if (!string.IsNullOrEmpty(item.Prefix))
-                        stb = new StringBuilder(item.Prefix);
+                        stb = stb.Clear().Append(item.Prefix);
 
                     stb.Append(item.TreeNode.Value);
                     if (item.TreeNode.IsKey)

@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BinaryTree", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BinaryTree.Tests", "DataStructure.BinaryTree.Tests\DataStructure.BinaryTree.Tests.csproj", "{7D3C41BB-01FD-4596-A723-648EBBBB250E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.BorTree", "DataStructure.BorTree\DataStructure.BorTree.csproj", "{85B0D70B-1DE8-4E9F-A40E-8B8D3911809D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BorTree", "DataStructure.BorTree\DataStructure.BorTree.csproj", "{85B0D70B-1DE8-4E9F-A40E-8B8D3911809D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.BorTree.Tests", "DataStructure.BorTree.Tests\DataStructure.BorTree.Tests.csproj", "{10D71C03-8C3F-4459-BA93-231D55FB3BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BorTree.Tests", "DataStructure.BorTree.Tests\DataStructure.BorTree.Tests.csproj", "{10D71C03-8C3F-4459-BA93-231D55FB3BA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
