@@ -57,5 +57,15 @@ namespace DataStructure.BinaryHeap.Tests
 
             Assert.That(max, Is.EqualTo(15));
         }
+
+        [Test]
+        public void BinaryHeap_ShouldCreateWithConstructor()
+        {
+            var binaryHeap = new BinaryHeap<int>(new List<int> { 11, 17, 20, 7, 4, 13, 15});
+
+            binaryHeap.PopMax();
+            binaryHeap.PopMax();
+            Assert.That(binaryHeap.Max(), Is.EqualTo(15));
+        }
     }
 }

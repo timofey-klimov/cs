@@ -15,8 +15,9 @@
         public BinaryHeap(IEnumerable<T> items)
             : this()
         {
-            foreach (var item in items)
-                Insert(item);
+            _items = items.ToArray();
+            _currentIndex = _items.Length - 1;
+            Sort();   
         }
 
         public int Length => _items.Length;
@@ -26,8 +27,7 @@
         {
             if (Count == Length)
             {
-                _size *= 2;
-                Array.Resize(ref _items, _size);
+                Resize();
             }
             var currentIndex = ++_currentIndex;
             _items[currentIndex] = value;
@@ -47,6 +47,13 @@
             }
         }
 
+        private void Resize(int? count = null)
+        {
+            var size = count == null ? _size * 2 : count * 2;
+            _size = size.Value;
+
+            Array.Resize(ref _items, _size);
+        }
 
         public T? Max()
         {
@@ -58,12 +65,16 @@
             var currentMax = Max();
 
             var lastInserted = _items[_currentIndex];
-
-            var rootIndex = 0;
-
-            _items[rootIndex] = lastInserted;
+            _items[0] = lastInserted;
             --_currentIndex;
+            Sort();
 
+            return currentMax;
+        }
+
+        private void Sort()
+        {
+            var rootIndex = 0;
             while (rootIndex < _currentIndex)
             {
                 var currentValue = _items[rootIndex];
@@ -87,8 +98,6 @@
                     break;
                 }
             }
-
-            return currentMax;
         }
 
         private void Swap(ref int rootIndex, T currentValue, ref int leftChildIndex, T leftChild)
