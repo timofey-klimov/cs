@@ -1,6 +1,6 @@
 namespace DataStructure.BinaryHeap.Tests
 {
-    public class Tests
+    public class BinaryHeapShould
     {
         [SetUp]
         public void Setup()
@@ -19,7 +19,7 @@ namespace DataStructure.BinaryHeap.Tests
             binaryHeap.Insert(13);
             binaryHeap.Insert(15);
 
-            Assert.That(binaryHeap.Length, Is.EqualTo(7));
+            Assert.That(binaryHeap.Count, Is.EqualTo(7));
         }
 
         [Test]
@@ -61,11 +61,9 @@ namespace DataStructure.BinaryHeap.Tests
         [Test]
         public void BinaryHeap_ShouldCreateWithConstructor()
         {
-            var binaryHeap = new BinaryHeap<int>(new List<int> { 11, 17, 20, 7, 4, 13, 15});
+            var binaryHeap = new BinaryHeap<int>(new List<int> { 11, 17, 20, 7, 4, 13, 15, 36});
 
-            binaryHeap.PopMax();
-            binaryHeap.PopMax();
-            Assert.That(binaryHeap.Max(), Is.EqualTo(15));
+            Assert.That(binaryHeap.Max(), Is.EqualTo(36));
         }
     }
 }

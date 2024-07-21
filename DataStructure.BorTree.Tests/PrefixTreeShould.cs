@@ -1,6 +1,6 @@
 namespace DataStructure.BorTree.Tests
 {
-    public class Tests
+    public class PrefixTreeShould
     {
         [SetUp]
         public void Setup()
