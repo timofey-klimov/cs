@@ -10,5 +10,7 @@
         void Insert(T value);
 
         int Length { get; }
+
+        int Count { get; }
     }
 }

@@ -12,11 +12,19 @@
             _items = new T[_size];
         }
 
-        public int Length => _currentIndex + 1;
+        public BinaryHeap(IEnumerable<T> items)
+            : this()
+        {
+            foreach (var item in items)
+                Insert(item);
+        }
+
+        public int Length => _items.Length;
+        public int Count => _currentIndex + 1;
 
         public void Insert(T value)
         {
-            if (_currentIndex == _size - 1)
+            if (Count == Length)
             {
                 _size *= 2;
                 Array.Resize(ref _items, _size);
