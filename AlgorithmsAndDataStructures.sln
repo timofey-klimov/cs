@@ -19,9 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BinaryHeap", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.BinaryHeap.Tests", "DataStructure.BinaryHeap.Tests\DataStructure.BinaryHeap.Tests.csproj", "{CCFD9F71-D56E-49A7-96AE-8C5779C84F03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.Graph", "DataStructure.Graph\DataStructure.Graph.csproj", "{BE4A5493-29F5-4200-AA86-CA2EF1F61803}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.Graph", "DataStructure.Graph\DataStructure.Graph.csproj", "{BE4A5493-29F5-4200-AA86-CA2EF1F61803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.Graph.Tests", "DataStructure.Graph.Tests\DataStructure.Graph.Tests.csproj", "{1C313B18-98B8-49D7-9792-E3FBD70F6286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.Graph.Tests", "DataStructure.Graph.Tests\DataStructure.Graph.Tests.csproj", "{1C313B18-98B8-49D7-9792-E3FBD70F6286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.HashSet", "DataStructure.HashSet\DataStructure.HashSet.csproj", "{318206D9-B5BE-49F4-93E8-9A3460BCF124}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.HashSet.Tests", "DataStructure.HashSet.Tests\DataStructure.HashSet.Tests.csproj", "{F217FEFC-6DFB-413B-B2E2-7C4197F96761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.BinaryHeap.Benchmark", "DataStructure.BinaryHeap.Benchmark\DataStructure.BinaryHeap.Benchmark.csproj", "{BEE6B9F4-6B19-436B-A5DE-62A99C9F32F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +67,18 @@ Global
 		{1C313B18-98B8-49D7-9792-E3FBD70F6286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C313B18-98B8-49D7-9792-E3FBD70F6286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C313B18-98B8-49D7-9792-E3FBD70F6286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318206D9-B5BE-49F4-93E8-9A3460BCF124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318206D9-B5BE-49F4-93E8-9A3460BCF124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318206D9-B5BE-49F4-93E8-9A3460BCF124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318206D9-B5BE-49F4-93E8-9A3460BCF124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F217FEFC-6DFB-413B-B2E2-7C4197F96761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F217FEFC-6DFB-413B-B2E2-7C4197F96761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F217FEFC-6DFB-413B-B2E2-7C4197F96761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F217FEFC-6DFB-413B-B2E2-7C4197F96761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE6B9F4-6B19-436B-A5DE-62A99C9F32F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE6B9F4-6B19-436B-A5DE-62A99C9F32F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE6B9F4-6B19-436B-A5DE-62A99C9F32F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE6B9F4-6B19-436B-A5DE-62A99C9F32F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +92,9 @@ Global
 		{CCFD9F71-D56E-49A7-96AE-8C5779C84F03} = {1D185359-F908-4281-9DC6-09817F13DE19}
 		{BE4A5493-29F5-4200-AA86-CA2EF1F61803} = {1D185359-F908-4281-9DC6-09817F13DE19}
 		{1C313B18-98B8-49D7-9792-E3FBD70F6286} = {1D185359-F908-4281-9DC6-09817F13DE19}
+		{318206D9-B5BE-49F4-93E8-9A3460BCF124} = {1D185359-F908-4281-9DC6-09817F13DE19}
+		{F217FEFC-6DFB-413B-B2E2-7C4197F96761} = {1D185359-F908-4281-9DC6-09817F13DE19}
+		{BEE6B9F4-6B19-436B-A5DE-62A99C9F32F7} = {1D185359-F908-4281-9DC6-09817F13DE19}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AC07EE5-9507-499D-A6B2-AB5DFFDAD5D8}

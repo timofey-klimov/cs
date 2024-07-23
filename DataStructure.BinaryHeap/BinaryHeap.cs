@@ -63,26 +63,26 @@
         {
             var currentMax = Max();
 
-            var lastInserted = _items[_currentIndex];
-            _items[0] = lastInserted;
+            ref var lastInserted = ref _items[_currentIndex];
+            _items[0] = lastInserted;   
             --_currentIndex;
             var rootIndex = 0;
-            while (rootIndex < _currentIndex)
+            while (rootIndex * 2 + 1 < _currentIndex)
             {
-                var currentValue = _items[rootIndex];
+                ref var currentValue = ref _items[rootIndex];
                 var leftChildIndex = GetLeftChildIndex(rootIndex);
                 var rightChildIndex = GetRightChildIndex(rootIndex);
-                var leftChild = _items[leftChildIndex];
-                var rightChild = _items[rightChildIndex];
+                ref var leftChild = ref _items[leftChildIndex];
+                ref var rightChild = ref _items[rightChildIndex];
 
                 if (currentValue.CompareTo(leftChild) < 0 && rightChild.CompareTo(leftChild) < 0)
                 {
-                    Swap(ref rootIndex, currentValue, ref leftChildIndex, leftChild);
+                    Swap(rootIndex, ref currentValue, leftChildIndex, ref leftChild);
                     rootIndex = leftChildIndex;
                 }
                 else if (currentValue.CompareTo(rightChild) < 0 && leftChild.CompareTo(rightChild) < 0)
                 {
-                    Swap(ref rootIndex, currentValue, ref rightChildIndex, rightChild);
+                    Swap(rootIndex, ref currentValue, rightChildIndex, ref rightChild);
                     rootIndex = rightChildIndex;
                 }
                 else
@@ -94,7 +94,7 @@
             return currentMax;
         }
 
-        private void Swap(ref int rootIndex, T currentValue, ref int leftChildIndex, T leftChild)
+        private void Swap(int rootIndex, ref T currentValue, int leftChildIndex, ref T leftChild)
         {
             _items[rootIndex] = leftChild;
             _items[leftChildIndex] = currentValue;

@@ -65,5 +65,25 @@ namespace DataStructure.BinaryHeap.Tests
 
             Assert.That(binaryHeap.Max(), Is.EqualTo(36));
         }
+
+        [Test]
+        public void BinaryHeap_ShouldoPop()
+        {
+            var heap = new BinaryHeap<int>();
+
+            for (int i = 0; i < 10_000_000; i++)
+            {
+                heap.Insert(i);
+            }
+
+            int max = 0;
+
+            for (int i = 0; i < 10_000_000; i++)
+            {
+                max = heap.PopMax();
+            }
+
+            Assert.That(max, Is.EqualTo(0));
+        }
     }
 }
