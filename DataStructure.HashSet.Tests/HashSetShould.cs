@@ -8,9 +8,19 @@ namespace DataStructure.HashSet.Tests
         }
 
         [Test]
-        public void Test1()
+        public void HashSet_ShouldContains()
         {
-            Assert.Pass();
+            var hashSet = new HashSet<int>();
+            for (int i = 0; i < 15; i++)
+            {
+                hashSet.Add(i);
+            }
+
+            for (int i = 0;i < 15; i++)
+            {
+                var contains = hashSet.Contains(i);
+                Assert.IsTrue(contains);
+            }
         }
     }
 }

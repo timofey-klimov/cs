@@ -17,7 +17,6 @@ namespace DataStructure.BorTree
         }
         public HashSet<TreeNode> Children { get; init; } = new HashSet<TreeNode>();
 
-
         public void Insert(string word, object? info = null)
         {
             var children = Children;
@@ -38,8 +37,6 @@ namespace DataStructure.BorTree
                 }
             }
         }
-        [DebuggerDisplay("Value={StackKey.Value}, Prefix={Prefix}")]
-        private record StackItem(TreeNode TreeNode, string? Prefix);
 
         public IEnumerable<(string, object?)> RetrieveKeys(string prefix)
         {
@@ -59,8 +56,8 @@ namespace DataStructure.BorTree
             foreach (var node in children)
             {
                 var stb = new StringBuilder(prefix);
-                var stack = new Stack<StackItem>();
-                     stack.Push(new StackItem(node, null));
+                var stack = new Stack<Entry>();
+                     stack.Push(new Entry(node, null));
 
                 while (stack.Count != 0)
                 {
@@ -74,9 +71,22 @@ namespace DataStructure.BorTree
 
                     foreach (var child in item.TreeNode.Children)
                     {
-                        stack.Push(new StackItem(child, item.TreeNode.Children.Count > 1 ? stb.ToString() : null));
+                        stack.Push(new Entry(child, item.TreeNode.Children.Count > 1 ? stb.ToString() : null));
                     }
                 }
+            }
+        }
+
+        [DebuggerDisplay("Value={TreeNode.Value}, Prefix={Prefix}")]
+        private struct Entry
+        {
+            public TreeNode TreeNode { get; set; }
+            public string? Prefix { get; set; }
+
+            public Entry(TreeNode treeNode, string? prefix)
+            {
+                TreeNode = treeNode;
+                Prefix = prefix;
             }
         }
     }
